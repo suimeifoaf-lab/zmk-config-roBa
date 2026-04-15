@@ -3,6 +3,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 80
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <300>;
@@ -24,10 +26,12 @@
     };
 
     behaviors {
-        enc_scroll: enc_scroll {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
+        encoder_msc_down_up: encoder_msc_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            tap-ms = <20>;
         };
     };
 
@@ -42,7 +46,7 @@
 &kp LCTRL         &kp LEFT_ALT  &kp LEFT_WIN  &mt LEFT_SHIFT LANG2  &lt 1 SPACE  &lt 2 LANG1      &kp BACKSPACE  &lt 3 ENTER                             &lt 5 ESCAPE
             >;
 
-            sensor-bindings = <&enc_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         SYMBOL {
@@ -52,6 +56,8 @@
 &kp GRAVE  &kp TILDE  &kp MINUS  &kp EXCL   &kp QMARK  &trans      &trans       &kp PIPE  &kp LBKT  &kp RBKT  &kp SQT   &kp DQT
 &trans     &trans     &trans     &trans     &trans     &trans      &kp COMMA    &kp DOT                               &kp ESC
             >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         NUM {
@@ -61,6 +67,8 @@
 &trans  &kp F1  &kp F2   &kp F3   &kp F4    &trans  &trans    &kp N1  &kp N2  &kp N3  &kp RBRC  &kp COLON
 &trans  &trans  &trans   &trans   &trans    &trans  &trans    &kp N0                              &kp DOT
             >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         ARROW {
@@ -71,7 +79,7 @@
 &trans         &trans  &kp N0   &trans   &trans     &trans  &trans    &kp BACKSPACE                         &trans
             >;
 
-            sensor-bindings = <&enc_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         MOUSE {
@@ -81,6 +89,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans                                &trans
             >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         SCROLL {
@@ -90,6 +100,8 @@
 &trans  &trans  &trans     &trans  &trans     &trans  &trans                 &trans            &trans        &trans           &trans  &trans
 &trans  &trans  &trans     &trans  &kp LS(LG(N5))  &kp LS(LG(N4))      &kp LC(DOWN)  &kp LC(UP_ARROW)          &trans
             >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         CONFIG {
@@ -99,6 +111,8 @@
 &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans    &bootloader  &trans  &trans  &trans  &trans
 &trans          &trans        &trans        &trans        &trans        &trans  &trans    &trans                               &trans
             >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
         };
     };
 };

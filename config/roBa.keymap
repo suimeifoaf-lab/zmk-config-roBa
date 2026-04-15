@@ -23,6 +23,14 @@
         compatible = "zmk,combos";
     };
 
+    behaviors {
+        enc_scroll: enc_scroll {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -30,11 +38,11 @@
             bindings = <
 &kp Q             &kp W         &kp E         &kp R             &kp T                                                &kp Y            &kp U  &kp I      &kp O     &kp P
 &kp A             &kp S         &kp D         &kp F             &kp G        &trans      &kp MINUS                 &kp H            &kp J  &kp K      &kp L     &kp SEMI
-&kp Z             &kp X         &kp C         &kp V             &kp B        &trans      &trans                 &kp N            &kp M  &kp COMMA  &kp DOT   &kp SLASH
+&kp Z             &kp X         &kp C         &kp V             &kp B        &trans      &trans                    &kp N            &kp M  &kp COMMA  &kp DOT   &kp SLASH
 &kp LCTRL         &kp LEFT_ALT  &kp LEFT_WIN  &mt LEFT_SHIFT LANG2  &lt 1 SPACE  &lt 2 LANG1      &kp BACKSPACE  &lt 3 ENTER                             &lt 5 ESCAPE
             >;
 
-            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&enc_scroll SCRL_UP SCRL_DOWN>;
         };
 
         SYMBOL {
@@ -63,7 +71,7 @@
 &trans         &trans  &kp N0   &trans   &trans     &trans  &trans    &kp BACKSPACE                         &trans
             >;
 
-            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&enc_scroll SCRL_UP SCRL_DOWN>;
         };
 
         MOUSE {

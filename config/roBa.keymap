@@ -34,7 +34,7 @@
 &kp LCTRL         &kp LEFT_ALT  &kp LEFT_WIN  &mt LEFT_SHIFT LANG2  &lt 1 SPACE  &lt 2 LANG1      &kp BACKSPACE  &lt 3 ENTER                             &lt 5 ESCAPE
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
         };
 
         SYMBOL {
@@ -63,7 +63,7 @@
 &trans         &trans  &kp N0   &trans   &trans     &trans  &trans    &kp BACKSPACE                         &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
         };
 
         MOUSE {

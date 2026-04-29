@@ -88,6 +88,16 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
             label = "KP_EXIT_AML";
         };
+
+        ss_mac: ss_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI &kp LSHFT>
+                , <&macro_tap &kp N5>
+                , <&macro_release &kp LGUI &kp LSHFT>;
+            label = "SS_MAC";
+        };
     };
 
     keymap {
@@ -97,8 +107,8 @@
             bindings = <
 &kp Q      &kp W         &kp E         &kp R             &kp T                                                                                     &kp Y            &kp U                           &kp I      &kp O     &kp P
 &kp A      &kp S         &kp D         &mt_exit_AML_on_tap LEFT_WIN F  &kp G  &trans                          &kp MINUS                             &kp H            &mt_exit_AML_on_tap LEFT_WIN J  &kp K      &kp L     &kp SEMI
-&kp Z      &kp X         &kp C         &kp V             &kp B  &trans                                       &trans                                 &kp N            &kp M                           &kp COMMA  &kp DOT   &kp SLASH
-&kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &mt_exit_AML_on_tap LEFT_SHIFT LANG2  &lt_exit_AML_on_tap 1 SPACE  &lt_exit_AML_on_tap 2 LANG1      &kp BACKSPACE  &lt 3 ENTER                                                                                       &lt 5 ESCAPE
+&kp Z      &kp X         &kp C         &kp V             &kp B  &trans                                       &trans                                 &kp N            &kp M                           &kp COMMA  &kp DOT   &kp LS(INT1)
+&kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &mt_exit_AML_on_tap LEFT_SHIFT LANG2  &lt_exit_AML_on_tap 1 SPACE  &lt_exit_AML_on_tap 2 LANG1      &kp BACKSPACE  &lt 3 ENTER                                                                                       &ss_mac
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;

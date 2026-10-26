@@ -133,43 +133,43 @@ layers:
   - '0'
   - .
   Arrow:
-  - BRI DN
-  - BRI UP
-  - PREV
-  - PP
-  - NEXT
-  - PG UP
+  - ESC
+  - '7'
+  - '8'
+  - '9'
+  - '*'
+  - (
   - Alt+LEFT
   - UP
-  - Alt+RIGHT
-  - PG DN
-  - MUTE
-  - VOL DN
-  - VOL UP
+  - AltGr+RIGHT
+  - '['
+  - TAB
+  - '4'
+  - '5'
+  - '6'
+  - ']'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Gui+LEFT
-  - LEFT
-  - DOWN
-  - RIGHT
-  - Gui+RIGHT
-  - LSHFT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Ctl+Alt+Gui+LEFT
-  - Ctl+Sft+TAB
+  - \
+  - '!'
+  - '-'
+  - '?'
   - Ctl+TAB
+  - LEFT SHIFT
+  - '1'
+  - '2'
+  - '3'
   - {t: ▽, type: trans}
-  - Ctl+Alt+Gui+RIGHT
-  - Config ⇄
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - Alt+Gui+Ctl+LEFT
+  - LEFT
+  - UP
+  - RIGHT
+  - AltGr+Ctl+Gui+RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -307,7 +307,7 @@ layers:
   - Sft+Gui+4
   - Ctl+DOWN
   - Ctl+UP ARROW
-  - {t: ▽, type: trans}
+  - Config ⇄
   Config:
   - BT CLR ALL
   - Win ⇄
@@ -370,11 +370,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - HOME
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - END
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

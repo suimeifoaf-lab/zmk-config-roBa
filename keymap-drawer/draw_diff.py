@@ -24,9 +24,9 @@ U = 96; KW = U - 10
 PAD = 30; TITLE_H = 54
 LW = int(13.6 * U) + 2 * PAD; LH = int(5.1 * U) + TITLE_H
 ORDER = ["Mac","Sym","Num","Arrow","Win","Mouse","Scroll","Config","WinArrow","WinScroll"]
-DESC = {"Mac":"0 ベース（Mac）","Sym":"1 Sym（Space ホールド）","Num":"2 Num（かな ホールド）","Arrow":"3 Arrow（Enter ホールド）",
+DESC = {"Mac":"0 ベース（Mac）","Sym":"1 Sym（Space ホールド）","Num":"2 Num（かな ホールド）","Arrow":"3 Arrow（Enter ホールド）変更なし",
         "Win":"4 Win【新設】Config の W でトグル","Mouse":"5 Mouse（ボールで自動）","Scroll":"6 Scroll（Mouse で ; ホールド）",
-        "Config":"7 Config（Arrow＋左下Ctrl位置でトグル）","WinArrow":"8 WinArrow【新設】Win＋Arrow で自動","WinScroll":"9 WinScroll【新設】Win＋Scroll で自動"}
+        "Config":"7 Config（Scroll の右端キーでトグル）","WinArrow":"8 WinArrow【新設】Win＋Arrow で自動","WinScroll":"9 WinScroll【新設】Win＋Scroll で自動"}
 COLS = 2; ROWS = math.ceil(len(ORDER)/COLS)
 HEAD = 120
 img = Image.new("RGB", (LW*COLS + PAD, HEAD + LH*ROWS + PAD), "white")

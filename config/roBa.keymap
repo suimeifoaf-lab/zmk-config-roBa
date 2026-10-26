@@ -72,14 +72,6 @@
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
 
-        /* エンコーダ: ARROW 層ではブラウザのタブ切替（時計回り=次のタブ。Mac/Win 共通） */
-        encoder_tab: encoder_tab {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "ENCODER_TAB";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp LC(PAGE_DOWN)>, <&kp LC(PAGE_UP)>;
-        };
-
         /* レイヤーをオフにするbehavior */
         tog_off: toggle_layer_off {
             compatible = "zmk,behavior-toggle-layer";
@@ -192,18 +184,17 @@
             sensor-bindings = <&encoder_volume>;
         };
 
-        /* 3: 矢印・ナビ（Enter ホールド）。右手 IJKL が矢印、U/O 単語移動、Y/P ページ、H/; 行頭行末、N/_ 画面移動。
-         *    左手はメディアキー。左下 Ctrl 位置で CONFIG 層をトグル。エンコーダはタブ切替 */
+        /* 3: 矢印・テンキー（Enter ホールド）。V3 のまま変更なし（本人のこだわり） */
         arrow_layer {
             display-name = "Arrow";
             bindings = <
-&kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV    &kp C_PP  &kp C_NEXT                               &kp PG_UP             &kp LA(LEFT)    &kp UP     &kp LA(RIGHT)  &kp PG_DN
-&kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &trans    &trans      &trans      &trans           &kp LG(LEFT)          &kp LEFT        &kp DOWN   &kp RIGHT      &kp LG(RIGHT)
-&kp LSHFT     &trans        &trans        &trans    &trans      &trans      &trans           &kp LC(LA(LG(LEFT)))  &kp LC(LS(TAB)) &kp LC(TAB) &trans        &kp LC(LA(LG(RIGHT)))
-&tog CONFIG   &trans        &trans        &trans    &trans      &trans      &trans           &kp BACKSPACE                                                   &trans
+&kp ESC        &kp N7  &kp N8   &kp N9   &kp STAR                              &kp LPAR                  &kp LA(LEFT)  &kp UP    &kp RA(RIGHT)           &kp LBKT
+&kp TAB        &kp N4  &kp N5   &kp N6   &kp RBKT   &trans  &trans             &kp BSLH                  &kp EXCL      &kp MINUS &kp QMARK               &kp RC(TAB)
+&kp LEFT_SHIFT &kp N1  &kp N2   &kp N3   &trans     &trans  &trans             &kp LA(LG(LC(LEFT)))      &kp LEFT      &kp UP    &kp RIGHT               &kp RA(RC(RG(RIGHT)))
+&trans         &trans  &kp N0   &trans   &trans     &trans  &trans             &kp BACKSPACE                                                             &trans
             >;
 
-            sensor-bindings = <&encoder_tab>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         /* 4: Windows 用の差し替え（CONFIG の W でトグル）。ホームロウ F/J = Ctrl、親指列 Win/Alt/Ctrl、右端 = Win+Shift+S */
@@ -232,20 +223,20 @@
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
-        /* 6: スクロール（MOUSE で ; ホールド）。J/L = アプリ切替、親指 = スクショ・Mission Control */
+        /* 6: スクロール（MOUSE で ; ホールド）。J/L = アプリ切替、親指 = スクショ・Mission Control、右端 = CONFIG トグル */
         scroll_layer {
             display-name = "Scroll";
             bindings = <
 &trans  &trans  &kp ENTER  &trans  &trans                                     &trans            &trans           &trans   &trans       &trans
 &trans  &trans  &trans     &trans  &trans     &trans  &trans                  &trans            &kp LG(LS(TAB))  &trans   &kp LG(TAB)  &trans
 &trans  &trans  &trans     &trans  &trans     &trans  &trans                  &trans            &trans           &trans   &trans       &trans
-&trans  &trans  &trans     &trans  &kp LS(LG(N5))  &kp LS(LG(N4))      &kp LC(DOWN)  &kp LC(UP_ARROW)                                  &trans
+&trans  &trans  &trans     &trans  &kp LS(LG(N5))  &kp LS(LG(N4))      &kp LC(DOWN)  &kp LC(UP_ARROW)                                  &tog CONFIG
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
-        /* 7: 設定（ARROW + 左下 Ctrl 位置でトグル。同じ位置か右端でもう一度押して抜ける）
+        /* 7: 設定（SCROLL の右端キーでトグル。左下 Ctrl 位置か右端でもう一度押して抜ける）
          *    W = Windows 層トグル、O = USB/BLE 出力切替、Z〜B = BT 接続先 0〜4、N = ブートローダー */
         config_layer {
             display-name = "Config";
@@ -259,17 +250,17 @@
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
-        /* 8: WIN + ARROW で自動。単語移動 Ctrl+←→、行頭行末 Home/End、画面移動 Win+Shift+←→ */
+        /* 8: WIN + ARROW で自動。単語移動 Ctrl+←→（U/O）、画面移動 Win+Shift+←→（N/_） */
         win_arrow_layer {
             display-name = "WinArrow";
             bindings = <
-&trans  &trans  &trans  &trans  &trans                              &trans          &kp LC(LEFT)  &trans  &kp LC(RIGHT)  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans          &kp HOME        &trans        &trans  &trans         &kp END
-&trans  &trans  &trans  &trans  &trans  &trans      &trans          &kp LG(LS(LEFT)) &trans       &trans  &trans         &kp LG(LS(RIGHT))
-&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                               &trans
+&trans  &trans  &trans  &trans  &trans                              &trans            &kp LC(LEFT)  &trans  &kp LC(RIGHT)  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans            &trans        &trans  &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans          &kp LG(LS(LEFT))  &trans        &trans  &trans         &kp LG(LS(RIGHT))
+&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                                 &trans
             >;
 
-            sensor-bindings = <&encoder_tab>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         /* 9: WIN + SCROLL で自動。アプリ切替 Alt+Tab、スクショ Win+Shift+S / PrintScreen、Win+D / Win+Tab */

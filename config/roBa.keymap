@@ -9,11 +9,11 @@
 
 /* レイヤー番号（keymap 内の並び順と一致させること） */
 #define BASE       0
-#define SYMBOL     1
-#define NUM        2
-#define ARROW      3
-#define WIN        4   /* Windows 用の差し替え層（CONFIG の W でトグル） */
-#define MOUSE      5   /* ボールを動かすと自動で入る（AML） */
+#define WIN        1   /* Windows 用の差し替え層（CONFIG の W でトグル）。SYMBOL/NUM/ARROW より下に置く（F/J 位置の記号・数字を食わないため） */
+#define SYMBOL     2
+#define NUM        3
+#define ARROW      4
+#define MOUSE      5   /* ボールを動かすと自動で入る（AML）。WIN より上（J のクリックが Ctrl/J に負けないため） */
 #define SCROLL     6
 #define CONFIG     7
 #define WIN_ARROW  8   /* WIN + ARROW のとき自動で重なる（conditional layer） */
@@ -158,7 +158,20 @@
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
-        /* 1: 記号（Space ホールド）。矢印は ARROW 層へ移し、空いた左手に & + * # を置いた */
+        /* 1: Windows 用の差し替え（CONFIG の W でトグル・SYMBOL/NUM/ARROW より下）。ホームロウ F/J = Ctrl、親指列 Win/Alt/Ctrl、右端 = Win+Shift+S */
+        win_layer {
+            display-name = "Win";
+            bindings = <
+&trans        &trans        &trans     &trans                                &trans                                                   &trans  &trans                        &trans  &trans  &trans
+&trans        &trans        &trans     &mt_exit_AML_on_tap LCTRL F           &trans  &trans                  &trans                   &trans  &mt_exit_AML_on_tap LCTRL J   &trans  &trans  &trans
+&trans        &trans        &trans     &trans                                &trans  &trans                  &trans                   &trans  &trans                        &trans  &trans  &trans
+&kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL  &trans                                &trans  &trans                  &trans                   &trans                                                &kp LG(LS(S))
+            >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
+        };
+
+        /* 2: 記号（Space ホールド）。矢印は ARROW 層へ移し、空いた左手に & + * # を置いた */
         symbol_layer {
             display-name = "Sym";
             bindings = <
@@ -171,7 +184,7 @@
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
-        /* 2: 右手テンキー＋演算子、左手 F1〜F12（かな ホールド）。エンコーダは音量 */
+        /* 3: 右手テンキー＋演算子、左手 F1〜F12（かな ホールド）。エンコーダは音量 */
         num_layer {
             display-name = "Num";
             bindings = <
@@ -184,7 +197,7 @@
             sensor-bindings = <&encoder_volume>;
         };
 
-        /* 3: 矢印・テンキー（Enter ホールド）。V3 のまま変更なし（本人のこだわり） */
+        /* 4: 矢印・テンキー（Enter ホールド）。V3 のまま変更なし（本人のこだわり） */
         arrow_layer {
             display-name = "Arrow";
             bindings = <
@@ -197,18 +210,6 @@
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
-        /* 4: Windows 用の差し替え（CONFIG の W でトグル）。ホームロウ F/J = Ctrl、親指列 Win/Alt/Ctrl、右端 = Win+Shift+S */
-        win_layer {
-            display-name = "Win";
-            bindings = <
-&trans        &trans        &trans     &trans                                &trans                                                   &trans  &trans                        &trans  &trans  &trans
-&trans        &trans        &trans     &mt_exit_AML_on_tap LCTRL F           &trans  &trans                  &trans                   &trans  &mt_exit_AML_on_tap LCTRL J   &trans  &trans  &trans
-&trans        &trans        &trans     &trans                                &trans  &trans                  &trans                   &trans  &trans                        &trans  &trans  &trans
-&kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL  &trans                                &trans  &trans                  &trans                   &trans                                                &kp LG(LS(S))
-            >;
-
-            sensor-bindings = <&encoder_msc_down_up>;
-        };
 
         /* 5: マウス（ボールで自動）。J/K/L = 左/中/右クリック、; ホールドで SCROLL */
         mouse_layer {

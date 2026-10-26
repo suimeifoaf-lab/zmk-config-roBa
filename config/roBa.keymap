@@ -200,7 +200,7 @@
 &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV    &kp C_PP  &kp C_NEXT                               &kp PG_UP             &kp LA(LEFT)    &kp UP     &kp LA(RIGHT)  &kp PG_DN
 &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &trans    &trans      &trans      &trans           &kp LG(LEFT)          &kp LEFT        &kp DOWN   &kp RIGHT      &kp LG(RIGHT)
 &kp LSHFT     &trans        &trans        &trans    &trans      &trans      &trans           &kp LC(LA(LG(LEFT)))  &kp LC(LS(TAB)) &kp LC(TAB) &trans        &kp LC(LA(LG(RIGHT)))
-&tog CONFIG   &trans        &trans        &trans    &trans      &trans      &trans           &trans                                                          &trans
+&tog CONFIG   &trans        &trans        &trans    &trans      &trans      &trans           &kp BACKSPACE                                                   &trans
             >;
 
             sensor-bindings = <&encoder_tab>;
@@ -246,13 +246,13 @@
         };
 
         /* 7: 設定（ARROW + 左下 Ctrl 位置でトグル。同じ位置か右端でもう一度押して抜ける）
-         *    W = Windows 層トグル、O = USB/BLE 出力切替、Z〜B = BT 接続先 0〜4、右内側下 = ブートローダー */
+         *    W = Windows 層トグル、O = USB/BLE 出力切替、Z〜B = BT 接続先 0〜4、N = ブートローダー */
         config_layer {
             display-name = "Config";
             bindings = <
 &bt BT_CLR_ALL  &tog WIN      &trans        &trans        &trans                                &trans       &trans  &trans  &out OUT_TOG  &trans
 &trans          &trans        &trans        &trans        &trans        &trans  &trans          &trans       &trans  &trans  &trans        &trans
-&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &bootloader     &trans       &trans  &trans  &trans        &trans
+&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans          &bootloader  &trans  &trans  &trans        &trans
 &tog CONFIG     &trans        &trans        &trans        &trans        &trans  &trans          &trans                                     &tog CONFIG
             >;
 

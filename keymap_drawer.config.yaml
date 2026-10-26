@@ -13,6 +13,10 @@ parse_config:
     "&tog CONFIG": "Config ⇄"
     "&tog WIN": "Win ⇄"
     "&out OUT_TOG": "USB/BLE"
+    "&mkp MB1": "左クリック"
+    "&mkp MB2": "右クリック"
+    "&mkp MB3": "中クリック"
+    "&bootloader": "Bootloader"
 draw_config:
   key_w: 60
   key_h: 56

@@ -174,7 +174,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: BACKSPACE, type: held}
   - {t: ▽, type: trans}
   Win:
   - {t: ▽, type: trans}
@@ -239,9 +239,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB1'
-  - '&mkp MB3'
-  - '&mkp MB2'
+  - 左クリック
+  - 中クリック
+  - 右クリック
   - Scroll
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -337,8 +337,8 @@ layers:
   - {t: BT, h: '3'}
   - {t: BT, h: '4'}
   - {t: ▽, type: trans}
-  - '&bootloader'
   - {t: ▽, type: trans}
+  - Bootloader
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

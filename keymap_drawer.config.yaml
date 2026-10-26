@@ -1,0 +1,18 @@
+# keymap-drawer の表示設定（.github/workflows/draw.yml と手元の再生成で共用）
+parse_config:
+  raw_binding_map:
+    "&mt_exit_AML_on_tap LEFT_WIN F": {t: F, h: Cmd}
+    "&mt_exit_AML_on_tap LEFT_WIN J": {t: J, h: Cmd}
+    "&mt_exit_AML_on_tap LCTRL F": {t: F, h: Ctrl}
+    "&mt_exit_AML_on_tap LCTRL J": {t: J, h: Ctrl}
+    "&mt_exit_AML_on_tap LEFT_SHIFT LANG2": {t: 英数, h: Shift}
+    "&lt_exit_AML_on_tap SYMBOL SPACE": {t: Space, h: Sym}
+    "&lt_exit_AML_on_tap NUM LANG1": {t: かな, h: Num}
+    "&ss_mac": "Cmd+Sft+5"
+    "&kp LS(INT1)": "_"
+    "&tog CONFIG": "Config ⇄"
+    "&tog WIN": "Win ⇄"
+    "&out OUT_TOG": "USB/BLE"
+draw_config:
+  key_w: 60
+  key_h: 56

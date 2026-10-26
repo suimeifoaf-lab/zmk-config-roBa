@@ -14,12 +14,12 @@ layers:
   - A
   - S
   - D
-  - {t: '&kp_exit_AML F', h: LEFT WIN}
+  - {t: F, h: Cmd}
   - G
   - TAB
   - '-'
   - H
-  - {t: '&kp_exit_AML J', h: LEFT WIN}
+  - {t: J, h: Cmd}
   - K
   - L
   - ;
@@ -34,16 +34,16 @@ layers:
   - M
   - ','
   - .
-  - Sft+INT1
+  - _
   - LCTRL
   - LEFT ALT
   - LEFT WIN
-  - {t: '&kp_exit_AML LANG2', h: LEFT SHIFT}
-  - {t: '&kp_exit_AML SPACE', h: Sym}
-  - {t: '&kp_exit_AML LANG1', h: Num}
+  - {t: 英数, h: Shift}
+  - {t: Space, h: Sym}
+  - {t: かな, h: Num}
   - BACKSPACE
   - {t: ENTER, h: Arrow}
-  - '&ss_mac'
+  - Cmd+Sft+5
   Sym:
   - '%'
   - $
@@ -83,7 +83,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -128,7 +128,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '0'
   - .
@@ -167,7 +167,7 @@ layers:
   - Ctl+TAB
   - {t: ▽, type: trans}
   - Ctl+Alt+Gui+RIGHT
-  - {t: Config, h: toggle}
+  - Config ⇄
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -190,12 +190,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&kp_exit_AML F', h: LCTRL}
+  - {t: F, h: Ctrl}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&kp_exit_AML J', h: LCTRL}
+  - {t: J, h: Ctrl}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -310,14 +310,14 @@ layers:
   - {t: ▽, type: trans}
   Config:
   - BT CLR ALL
-  - {t: Win, h: toggle}
+  - Win ⇄
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - OUT TOG
+  - USB/BLE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -343,7 +343,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Config, h: toggle}
+  - Config ⇄
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -351,7 +351,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Config, h: toggle}
+  - Config ⇄
   WinArrow:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

@@ -208,7 +208,7 @@ layers:
   - {t: ▽, type: trans}
   - Alt+Gui+Ctl+LEFT
   - LEFT
-  - UP
+  - DOWN
   - RIGHT
   - AltGr+Ctl+Gui+RIGHT
   - {t: ▽, type: trans}

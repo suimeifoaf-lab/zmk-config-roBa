@@ -35,6 +35,12 @@
     input-processors = <&zip_temp_layer MOUSE 100000>;
 };
 
+/* ボールをスクロールに切り替える層。roBa_R.overlay は scroll-layers = <5> と直書きしており
+ * v5 では 5 = MOUSE になる（ボールを動かすとスクロールしてしまう）ため、定義名 SCROLL に上書きする（2026-10-27） */
+&trackball {
+    scroll-layers = <SCROLL>;
+};
+
 /* クリック後250msでAML解除（マウスキーを押すまでレイヤーに留まる挙動） */
 &mkp_input_listener {
     input-processors = <&zip_temp_layer MOUSE 250>;

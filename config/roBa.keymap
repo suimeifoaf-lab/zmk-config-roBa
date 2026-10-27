@@ -209,13 +209,13 @@
             sensor-bindings = <&encoder_volume>;
         };
 
-        /* 4: 矢印・テンキー（Enter ホールド）。V3 のまま変更なし（本人のこだわり） */
+        /* 4: 矢印・テンキー（Enter ホールド）。V3 と同じ。2026-10-27 に3段目 K を ↑→↓ に変更（本人指示） */
         arrow_layer {
             display-name = "Arrow";
             bindings = <
 &kp ESC        &kp N7  &kp N8   &kp N9   &kp STAR                              &kp LPAR                  &kp LA(LEFT)  &kp UP    &kp RA(RIGHT)           &kp LBKT
 &kp TAB        &kp N4  &kp N5   &kp N6   &kp RBKT   &trans  &trans             &kp BSLH                  &kp EXCL      &kp MINUS &kp QMARK               &kp RC(TAB)
-&kp LEFT_SHIFT &kp N1  &kp N2   &kp N3   &trans     &trans  &trans             &kp LA(LG(LC(LEFT)))      &kp LEFT      &kp UP    &kp RIGHT               &kp RA(RC(RG(RIGHT)))
+&kp LEFT_SHIFT &kp N1  &kp N2   &kp N3   &trans     &trans  &trans             &kp LA(LG(LC(LEFT)))      &kp LEFT      &kp DOWN  &kp RIGHT               &kp RA(RC(RG(RIGHT)))
 &trans         &trans  &kp N0   &trans   &trans     &trans  &trans             &kp BACKSPACE                                                             &trans
             >;
 

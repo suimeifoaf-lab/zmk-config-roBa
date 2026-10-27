@@ -29,6 +29,12 @@
     quick-tap-ms = <300>;
 };
 
+/* ボールを動かすと MOUSE 層へ（クリックするまで留まる）。roBa_R.overlay は層番号 4 を直書きしており
+ * v5 では 4 = ARROW になるため、ここで定義名 MOUSE に上書きする（2026-10-27） */
+&trackball_listener {
+    input-processors = <&zip_temp_layer MOUSE 100000>;
+};
+
 /* クリック後250msでAML解除（マウスキーを押すまでレイヤーに留まる挙動） */
 &mkp_input_listener {
     input-processors = <&zip_temp_layer MOUSE 250>;

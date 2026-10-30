@@ -164,7 +164,7 @@
 &kp Q      &kp W         &kp E         &kp R                                 &kp T                                                                              &kp Y          &kp U                           &kp I      &kp O     &kp P
 &kp A      &kp S         &kp D         &mt_exit_AML_on_tap LEFT_WIN F        &kp G  &kp TAB                       &kp MINUS                                   &kp H          &mt_exit_AML_on_tap LEFT_WIN J  &kp K      &kp L     &kp SEMI
 &kp Z      &kp X         &kp C         &kp V                                 &kp B  &kp ESC                       &kp DEL                                     &kp N          &kp M                           &kp COMMA  &kp DOT   &kp UNDER   
-&kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &mt_exit_AML_on_tap LEFT_SHIFT LANG2  &lt_exit_AML_on_tap SYMBOL SPACE  &lt_exit_AML_on_tap NUM LANG1      &kp BACKSPACE  &lt ARROW ENTER                                                            &ss_mac
+&kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &mt_exit_AML_on_tap LEFT_SHIFT LANG2  &lt_exit_AML_on_tap SYMBOL SPACE  &lt_exit_AML_on_tap NUM LANG1      &lt NUM BACKSPACE  &lt ARROW ENTER                                                            &ss_mac
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;

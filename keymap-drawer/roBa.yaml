@@ -41,7 +41,7 @@ layers:
   - {t: 英数, h: Shift}
   - {t: Space, h: Sym}
   - {t: かな, h: Num}
-  - {t: BACKSPACE, h: Num}
+  - BACKSPACE
   - {t: ENTER, h: Arrow}
   - Cmd+Sft+5
   Win:
@@ -173,7 +173,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - '0'
   - .
   Arrow:
